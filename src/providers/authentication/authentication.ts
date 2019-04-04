@@ -18,7 +18,7 @@ export class AuthenticationProvider {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(email: string, password: string, userName: string): Promise<any> {
+  signupUser(email: string, password: string, userName: string, name: string, surname: string ): Promise<any> {
     //createUserWithEmailAndPassword da de alta el usuario en firebase e inicia sesion AUTOMATICAMENTE
     return firebase
       .auth()
@@ -31,7 +31,9 @@ export class AuthenticationProvider {
           .child(firebase.auth().currentUser.uid)
           .set({
             email: email,
-            userName: userName
+            userName: userName,
+            name: name,
+            surname: surname
           });
       });
   }

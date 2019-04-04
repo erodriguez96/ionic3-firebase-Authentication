@@ -11,5 +11,54 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-content padding>
+    <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
 
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Your email address"
+                   [class.invalid]="!signupForm.controls.email.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Your password"
+                   [class.invalid]="!signupForm.controls.password.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Confirm Your Password</ion-label>
+        <ion-input formControlName="passwordConfirm" type="password" placeholder="Confirm Your Password"
+                   [class.invalid]="!signupForm.controls.passwordConfirm.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>UserName (To be displayed within the app)</ion-label>
+        <ion-input formControlName="userName" type="text" placeholder="Your Username"
+                   [class.invalid]="!signupForm.controls.userName.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Your Name"
+                   [class.invalid]="!signupForm.controls.name.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Surname</ion-label>
+        <ion-input formControlName="surname" type="text" placeholder="Your Surname"
+                   [class.invalid]="!signupForm.controls.surname.valid && blur">
+        </ion-input>
+      </ion-item>
+
+      <button ion-button block type="submit" [disabled]="!signupForm.valid">
+        Create an Account
+      </button>
+    </form>
+  </ion-content>
 </ion-content>

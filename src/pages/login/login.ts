@@ -12,7 +12,7 @@ import {TabsPage} from "../tabs/tabs";
  */
 
 @IonicPage({
-  name: 'Login'
+  name: 'LoginPage'
 })
 @Component({
   selector: 'page-login',
